@@ -77,10 +77,22 @@ In order to run the training script, you need to run the following:
     
 Note that the terms inside the quotation marks are just for reference of the order, rather than the exact input command. The first input takes the name of the dataset you're testing on, e.g. Combined Dataset Example (from "Test Datasets" in the downloaded datasets folder above). Second input takes a string which is converted to a boolean in the script, which controls whether the test set is real or synthetic, inputs are "True" or "False". Third input takes a string which is converted to a boolean in the script, which controls whether the test set is combined or a lone synthetic test set (for the synthetic datasets). The fourth input takes the saved checkpoint you want to run inference with.
 
-# Running Evaluation pipeline
+# Running Temporal Consistency Evaluation pipeline
 
 There are two scripts in the "Temporal Consistency Scripts" folder, one computes the Multi-Class Temporal Consistency scores, the other the Single-Class Temporal Consistency scores. These are delineated by "edge_image_registration_2classiou.py" and "edge_alignment_image_registration_iou.py" respectively. In order to run the two scripts we use the following commands in a command line (in the Temporal Consistency Scripts directory):
 
     python edge_image_registration_2classiou.py -specs="INSERT_DATASET_NAME" -specs="INSERT_FINE_TUNING_NAME"
     python edge_alignment_image_registration_iou.py -specs="INSERT_DATASET_NAME" -specs="INSERT_FINE_TUNING_NAME"
     
+The dataset name parameter is the path of the dataset which is being tested on, the fine tuning name parameter is the name set for the fine tuning network version during training.
+
+# Running ODS/OIS F-Score and AP Score 
+
+Inside the "ODS OIS F-Score Scripts" folder, there is a python script called "data_preparation.py". This will perform the required operations to reformat the labelled test sets (more specifically converting the ground truth labels into .MAT files) into a form suitable for running the MATLAB script "ods_ois_ap.m". The "data_preparation.py" script can be run in the command line as follows:
+
+    python data_preparation.py -specs="INSERT_DATASET_NAME" -specs="MIXED_VS_LONE_BOOL" -specs="INSERT_FINE_TUNING_NAME"
+
+The first input parameter is the dataset name, the second parameter is a "True" or "False" string which is converted to a boolean which alters the behaviour of the script depending on whether the test dataset is from a combination of datasets of just one dataset. The third parameter is the name of the Fine Tuned Network Version which the test set had inference ran on it.
+
+In order to then compute the ODS/OIS F-score and AP score you can run the "ods_ois_ap.m" file, you should alter the following variables at the beginning of the script to fit your requirements: "dataset_version", "network_version", "mixed_data_bool". These correspond to the same input parameters used for the data preparation script, an example of the typical inputs has been provided in the script. 
+
