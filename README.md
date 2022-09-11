@@ -79,4 +79,8 @@ Note that the terms inside the quotation marks are just for reference of the ord
 
 # Running Evaluation pipeline
 
+There are two scripts in the "Temporal Consistency Scripts" folder, one computes the Multi-Class Temporal Consistency scores, the other the Single-Class Temporal Consistency scores. These are delineated by "edge_image_registration_2classiou.py" and "edge_alignment_image_registration_iou.py" respectively. In order to run the two scripts we use the following commands in a command line (in the Temporal Consistency Scripts directory):
 
+    python edge_image_registration_2classiou.py -specs="INSERT_DATASET_NAME" -specs="INSERT_FINE_TUNING_NAME"
+    python edge_alignment_image_registration_iou.py -specs="INSERT_DATASET_NAME" -specs="INSERT_FINE_TUNING_NAME"
+    
