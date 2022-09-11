@@ -64,4 +64,5 @@ First we give an overview of the architecture inherited from [Soria et al.](http
 In order to run the training script, you need to run the following:
 
 
-    python main_altered.py -specs 
+    python main_altered.py -train="INSERT_DATASET_NAME" -train="INSERT_CHECKPOINT_PATH" -train="FINE_TUNING_VERSION_NAME"
+    
