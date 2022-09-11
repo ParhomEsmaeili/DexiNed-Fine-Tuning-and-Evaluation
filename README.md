@@ -16,6 +16,25 @@ Required Packages for the Python Scripts include:
 * [Natsort](https://pypi.org/project/natsort/)
 * Other package like NumPy, h5py, PIL, json. 
 
-For the purposes of computing ODS/OIS F-scores and AP scores you will require a couple of toolboxes:
+For the purposes of computing ODS/OIS F-scores and AP scores you will require a couple of MATLAB toolboxes:
 
-  git clone 
+
+
+
+## Project Architecture
+
+```
+├── data                        # Sample images for testing (paste your image here)
+|   ├── lena_std.tif            # Sample 1
+├── DexiNed-TF2                 # DexiNed in TensorFlow2 (in construction)   
+├── figs                        # Images used in README.md
+|   └── DexiNed_banner.png      # DexiNed banner
+├── legacy                      # DexiNed in TensorFlow1 (presented in WACV2020)
+├── utls                        # A series of tools used in this repo
+|   └── image.py                # Miscellaneous tool functions
+├── datasets.py                 # Tools for dataset managing 
+├── dexi_utils.py               # New functions still not used in the currecnt version
+├── losses.py                   # Loss function used to train DexiNed (BDCNloss2)
+├── main.py                     # The main python file with main functions and parameter settings
+                                # here you can test and train
+├── model.py                    # DexiNed class in pythorch
