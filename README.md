@@ -57,7 +57,7 @@ First we give an overview of the architecture inherited from [Soria et al.](http
 ├── Temporal Consistency Scripts #Folder which contains all of the scripts required for the pipelines for the Temporal Consistency Metrics 
 ```
 
-# How to run the scripts:
+# Running Fine-Tuning Scripts:
 
 ## Train 
 
@@ -66,4 +66,17 @@ In order to run the training script, you need to run the following:
 
     python main_altered.py -train="INSERT_DATASET_NAME" -train="INSERT_CHECKPOINT_PATH" -train="FINE_TUNING_VERSION_NAME"
     
-Note that the terms inside the quotation marks are just for reference of the order, rather than the exact input command. The first input takes the name of the dataset you're training on, e.g. Combined Dataset
+Note that the terms inside the quotation marks are just for reference of the order, rather than the exact input command. The first input takes the name of the dataset you're training on, e.g. Combined Dataset Placeholder (from the downloaded datasets folder above). Second input takes the checkpoint path you're resuming training from, this is typically going to be the pretrained network, e.g. "BIPED/10/10_model.pth" (this is for Linux, Windows uses \\ between each folder). The third input takes a string containing the name you want to label the fine tuned network as. 
+
+## Test
+
+In order to run the training script, you need to run the following:
+
+
+    python main_test.py -test="INSERT_DATASET_NAME" -test="REAL_VS_SYNTHETIC_BOOL" -test="MIXED_VS_LONE_BOOL" -test="CHECKPOINT_PATH"
+    
+Note that the terms inside the quotation marks are just for reference of the order, rather than the exact input command. The first input takes the name of the dataset you're testing on, e.g. Combined Dataset Example (from "Test Datasets" in the downloaded datasets folder above). Second input takes a string which is converted to a boolean in the script, which controls whether the test set is real or synthetic, inputs are "True" or "False". Third input takes a string which is converted to a boolean in the script, which controls whether the test set is combined or a lone synthetic test set (for the synthetic datasets). The fourth input takes the saved checkpoint you want to run inference with.
+
+# Running Evaluation pipeline
+
+
