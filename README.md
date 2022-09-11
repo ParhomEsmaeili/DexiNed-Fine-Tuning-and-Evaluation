@@ -66,3 +66,4 @@ In order to run the training script, you need to run the following:
 
     python main_altered.py -train="INSERT_DATASET_NAME" -train="INSERT_CHECKPOINT_PATH" -train="FINE_TUNING_VERSION_NAME"
     
+Note that the terms inside the quotation marks are just for reference of the order, rather than the exact input command. The first input takes the name of the dataset you're training on, e.g. Combined Dataset
