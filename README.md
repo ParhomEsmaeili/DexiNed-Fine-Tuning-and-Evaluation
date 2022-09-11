@@ -57,3 +57,11 @@ First we give an overview of the architecture inherited from [Soria et al.](http
 ├── Temporal Consistency Scripts #Folder which contains all of the scripts required for the pipelines for the Temporal Consistency Metrics 
 ```
 
+# How to run the scripts:
+
+## Train 
+
+In order to run the training script, you need to run the following:
+
+
+    python main_altered.py -specs 
