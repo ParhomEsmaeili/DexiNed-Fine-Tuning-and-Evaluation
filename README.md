@@ -16,4 +16,6 @@ Required Packages for the Python Scripts include:
 * [Natsort](https://pypi.org/project/natsort/)
 * Other package like NumPy, h5py, PIL, json. 
 
+For the purposes of computing ODS/OIS F-scores and AP scores you will require a couple of toolboxes:
 
+  git clone 
